@@ -21,18 +21,18 @@ check.addEventListener('click', function() {
       
       number.textContent = RandomNumber;
 
-      document.querySelector('body').style.backgroundColor = '#60b347';
+      document.querySelector('body').style.backgroundImage = 'linear-gradient(rgba(96, 179, 71, 0.95),rgba(96, 179, 71, 0.85)), url(../Images/pay-1036469_1920.jpg)';
 
       document.querySelector('.number').style.width = '30rem'; 
 
       if(score > highscore) {
         highscore = score;
-        document.querySelector(.'highscore').textContent = highscore;
+        document.querySelector('.highscore').textContent = highscore;
       }
 
   } else if (guess !== RandomNumber) {
     if (score > 1) {
-        message.textContent = (guess > RandomNumber) ? 'Too high': 'Too low';
+        message.textContent = (guess - RandomNumber > 0) ? 'high': 'Low';
         score--;
         scoretext.textContent = score;
     } else {
@@ -48,7 +48,7 @@ again.addEventListener('click' , function() {
   message.textContent = 'Start guessing...';
   scoretext.textContent = score;
   number.textContent = '?';
-  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('body').style.backgroundImage = 'linear-gradient(rgba(0, 0, 0, 0.95),rgba(0, 0, 0, 0.85)), url(../Images/pay-1036469_1920.jpg)';
   document.querySelector('.guess').value = ' ';
   document.querySelector('.number').style.width = '15rem'; 
 });
